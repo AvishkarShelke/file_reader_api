@@ -1,0 +1,11 @@
+flask
+flasgger
+flask-cors
+pytesseract
+pdfplumber
+python-docx
+pillow
+pandas
+openpyxl
+python-pptx
+gunicorn
