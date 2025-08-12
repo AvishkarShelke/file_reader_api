@@ -12,12 +12,17 @@ import io
 import pandas as pd
 from pptx import Presentation
 
-# Optional: Set Tesseract path on Windows if not in PATH
+# Optional: Set Tesseract path on Windows if needed
 # pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 app = Flask(__name__)
 Swagger(app)
 CORS(app)
+
+# ✅ Root route so Render home page shows something
+@app.route("/")
+def home():
+    return Response("API is running ✅ — Go to /apidocs for Swagger UI", mimetype="text/plain")
 
 @app.route("/extract", methods=["POST"])
 def extract_file_content():
